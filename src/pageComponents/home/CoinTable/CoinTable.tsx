@@ -18,7 +18,7 @@ const CoinTable = memo(({start, end}: {start:number, end: number})=>{
             <TableBody>
                 {
                     TABLE_COINS.slice(start, end + 1).map((coin: any) => {
-                        return <CoinRow coin={coin} />
+                        return <CoinRow coin={coin} key={coin.id}/>
                     })
                 }
             </TableBody>

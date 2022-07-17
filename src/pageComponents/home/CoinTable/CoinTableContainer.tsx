@@ -18,7 +18,6 @@ const CoinTableContainer = memo(({heading, visible}: {heading: string, visible: 
 
     useEffect(()=>{
         visible && fetchCoinsDetails(currency).then(res=>{
-            console.log(res, currency)
             setTableCoins(res)
         })
     },[setTableCoins,currency,visible])

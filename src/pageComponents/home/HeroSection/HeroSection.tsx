@@ -8,7 +8,6 @@ const HeroSection = memo(()=>{
       <StyledHero>
          <img className='hero_img' src="./imgs/hero_bg.avif" alt="hero" />
          <HeroTitle>
-            {/* <h2>Crypto Tracker</h2> */}
             <H2>Crypto Tracker</H2>
             <p>Get all information about crypto currencies</p>
          </HeroTitle>

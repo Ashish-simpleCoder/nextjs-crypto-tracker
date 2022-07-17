@@ -4,19 +4,27 @@ import { TrendingCoins } from "../../../api/api"
 import 'react-alice-carousel/lib/alice-carousel.css'
 import CarousalItem from "./CarousalItem"
 import { useCoinContext } from "../../../context/coinContext/coinContext"
+import asyncWrapper from "../../../utility/asyncWrapper"
 
 
 const Carousal = memo(()=>{
    const {currency, symbol, trending_coins, setTrendingCoins} = useCoinContext()
 
-   const fetchTrendingCoins = useCallback(async(selected_currency: string) => {
+   const fetchTrendingCoins = useCallback(asyncWrapper(async(selected_currency: string) => {
       let res = await fetch(TrendingCoins(selected_currency))
       return await res.json()
-   }, [])
+   }), [])
 
    useEffect(()=>{
-      fetchTrendingCoins(currency).then(coins=>setTrendingCoins(coins))
+      fetchTrendingCoins(currency).then(res => {
+         if (res.error) {
+            console.log(res.error)
+         } else {
+            setTrendingCoins(res)
+         }
+      })
    }, [currency, setTrendingCoins])
+
 
 
    return(
