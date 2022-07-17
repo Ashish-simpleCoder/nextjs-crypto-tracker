@@ -1,16 +1,30 @@
-import { memo, ReactNode } from "react"
-import styled from "styled-components"
-const title = 'change color theme - light and dark'
+import { memo, ReactNode } from 'react'
+import styled from 'styled-components'
 
-const Button = memo(({children, handleClick}: {children: ReactNode, handleClick: () => void})=>{
+const Button = ({
+    children,
+    handleClick,
+    disabled,
+    cn,
+    title
+}: {
+    children: ReactNode
+    handleClick?: () => void
+    disabled?: boolean
+    cn?: string
+    title?: string
+}) => {
     return (
-        <StyledButton onClick={handleClick} title={title}>{children}</StyledButton>
+        <StyledButton onClick={handleClick} title={title} disabled={disabled} className={cn}>
+            {children}
+        </StyledButton>
     )
-})
-export default Button
+}
+export default memo(Button)
 
 const StyledButton = styled.button`
-    border:none;
-    background:none;
-    cursor:pointer;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.4rem;
 `
