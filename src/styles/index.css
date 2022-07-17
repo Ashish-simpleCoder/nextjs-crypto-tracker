@@ -2,7 +2,7 @@
   --prm-clr:hsl(210, 50%, 8%);
   --secondary-clr:hsl(140, 100%, 30%);
   --accent-clr:hsl(0, 0%, 80%);
-  --border:hsl(0,0%,80%);
+  --border:hsl(0,0%,95%);
   --hero-title-clr:var(--secondary-clr);
   --hero-caption-clr:hsl(0, 0%, 80%);
   --profit-clr:hsl(120, 100%, 40%);
@@ -12,13 +12,14 @@
   --body-bg:hsl(0, 0%, 95%);
   --header-bg:white;
   --table-bg:hsl(0, 0%, 100%);
+  --table-head-bg: rgb(231, 231, 231);
 }
 
 .dark-theme {
   --prm-clr:hsl(210, 50%, 95%);
   --secondary-clr:hsl(140, 100%,35%);
   --accent-clr:hsl(0, 0%, 80%);
-  --border:hsl(0,0%,20%);
+  --border:hsl(0,0%,10%);
   --hero-title-clr:var(--secondary-clr);
   --hero-caption-clr:hsl(0, 0%, 80%);
   --profit-clr:hsl(120, 100%, 60%);
@@ -28,6 +29,7 @@
   --body-bg:hsl(0, 0%, 5%);
   --header-bg:hsl(0, 0%, 12%);
   --table-bg:hsl(0, 0%, 8%);
+  --table-head-bg: black;
 }
 
 .dark-theme .theme_img {

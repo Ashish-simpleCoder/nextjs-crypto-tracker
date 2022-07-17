@@ -1,5 +1,6 @@
 import {memo} from 'react'
 import styled from 'styled-components'
+import H2 from '../../../components/Typography/H2'
 import Carousal from './Carousal'
 
 const HeroSection = memo(()=>{
@@ -7,7 +8,8 @@ const HeroSection = memo(()=>{
       <StyledHero>
          <img className='hero_img' src="./imgs/hero_bg.avif" alt="hero" />
          <HeroTitle>
-            <h2>Crypto Tracker</h2>
+            {/* <h2>Crypto Tracker</h2> */}
+            <H2>Crypto Tracker</H2>
             <p>Get all information about crypto currencies</p>
          </HeroTitle>
          <Carousal/>

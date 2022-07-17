@@ -1,15 +1,21 @@
-import { memo } from "react";
+import { CSSProperties, memo, ReactNode } from "react";
 import styled from "styled-components";
 
-const H2 = memo(({text,marginTop, center, mb})=>{
+const H2 = memo(({children,mTop, center, mBottom}: {children: ReactNode, mTop?: string, center?: boolean, mBottom?: string})=>{
+
+    const styles: Record<string, string | boolean> = {}
+    mTop && (styles['marginTop'] = mTop)
+    center && (styles['textAlign'] = 'center')
+    mBottom &&(styles['marginBottom'] = mBottom)
+
     return(
-        <StyledH2 style={marginTop && {marginTop}} center={center && 'center'} mb={mb && '2rem'}>{text}</StyledH2>
+        <StyledH2 style={styles}>{children}</StyledH2>
     )
 })
 export default H2
 
-const StyledH2 = styled.h2`
+const StyledH2 = styled.h2<{center?: string, mBottom?: string}>`
     font-size:clamp(2rem,2.2rem,2.2vw);
     text-align:${({center})=>center && center};
-    margin-bottom:${({mb})=>mb && mb};
+    margin-bottom:${({mBottom})=>mBottom && mBottom};
 `
