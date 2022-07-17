@@ -10,7 +10,7 @@ const LogoContainer = () => {
         <StyledLogoContainer onClick={goToHome}>
             <span>
                 <img
-                    src='./imgs/cryptocurrencies.png'
+                    src='/imgs/cryptocurrencies.png'
                     alt='crypto'
                     title='<div>Icons made by <a href="https://www.flaticon.com/authors/dighital" title="Dighital">Dighital</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>'
                 />

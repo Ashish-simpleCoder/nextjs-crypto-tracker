@@ -6,7 +6,7 @@ const CarousalItem = memo(({ coin, select_symbol }: { coin: any; select_symbol: 
     let profit = price_change_percentage_24h >= 0
 
     return (
-        <Link href={`/coins/${id}`}>
+        <Link href={`/coin/${id}`}>
             <a
                 style={{
                     display: 'flex',
