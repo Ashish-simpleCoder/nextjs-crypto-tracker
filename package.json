@@ -1,7 +1,8 @@
 {
-  "name": "0_template",
+  "name": "nextjs-crypto-tracker",
   "version": "0.1.0",
   "private": true,
+  "description": "A crypto tracker built using NextJS-Typescript",
   "scripts": {
     "dev": "next dev --port 4000",
     "build": "next build",
