@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
-import { memo, useCallback } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
-const LogoContainer = memo(() => {
+const LogoContainer = () => {
     const router = useRouter()
-    const goToHome = useCallback(() => router.push('/'), [])
+    const goToHome = useCallback(() => router.push('/'), [router])
 
     return (
         <StyledLogoContainer onClick={goToHome}>
@@ -18,7 +18,7 @@ const LogoContainer = memo(() => {
             <h1>Crypto Tracker</h1>
         </StyledLogoContainer>
     )
-})
+}
 export default LogoContainer
 
 const StyledLogoContainer = styled.section`

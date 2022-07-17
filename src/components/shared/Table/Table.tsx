@@ -19,7 +19,7 @@ const StyledTable = styled.table`
     max-width:90rem;
     margin:auto;
     tbody,tr,td{
-        border:1px solid var(--border);
+        /* border:1px solid var(--border); */
         border-collapse:collapse;
     }
     td{

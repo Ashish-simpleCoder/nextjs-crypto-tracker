@@ -1,7 +1,6 @@
-import { memo } from "react"
 import styled from "styled-components"
 
-const Head = memo(({headings}: {headings: string[]})=>{
+const TableHead = ({headings}: {headings: string[]})=>{
     return(
         <StyledHead>
             <tr>
@@ -9,8 +8,8 @@ const Head = memo(({headings}: {headings: string[]})=>{
             </tr>
         </StyledHead>
     )
-})
-export default Head
+}
+export default TableHead
 
 const StyledHead = styled.thead`
     color:var(--secondary-clr);
@@ -22,11 +21,16 @@ const StyledHead = styled.thead`
     }
 `
 
-export const TableData = memo(
+export const TableData =
     ({ name, image, symbol, profit }: { name: string; image?: string; symbol?: string; profit?: string }) => {
+        const styles: any = {}
+        image && (styles['display'] = 'flex')
+        image && (styles['alignItems'] = 'flex')
+        // image && (styles['justifyContent'] = 'start')
+
         return (
             <td
-                // style={image && { display: 'flex', alignItems: 'center' }}
+                style={styles}
                 className={profit && (profit === 'true' ? 'profit' : 'lose')}
             >
                 {image && <img src={image} alt='coin'></img>}
@@ -35,4 +39,3 @@ export const TableData = memo(
             </td>
         )
     }
-)
