@@ -8,7 +8,7 @@
    color:var(--prm-clr);
 }
 
-html,body,#root{
+html,body,main, #__next{
    height: 100%;
 }
 
@@ -17,7 +17,8 @@ html{
 }
 body{
    background:var(--body-bg);
-   max-width:220rem;
+   max-width:200rem;
+   margin-inline: auto;
 }
 
 
