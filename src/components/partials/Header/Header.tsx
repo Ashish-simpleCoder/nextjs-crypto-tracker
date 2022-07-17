@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import CurrencyChanger from "./CurrencyChanger"
 import LogoContainer from "./LogoContainer"
 import ToggleTheme from "./ToggleTheme"
 
@@ -6,6 +7,7 @@ const Header = () => {
    return(
       <StyledHeader>
          <LogoContainer />
+         <CurrencyChanger />
          <ToggleTheme />
       </StyledHeader>
    )
