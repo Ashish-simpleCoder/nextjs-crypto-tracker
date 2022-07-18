@@ -61,7 +61,7 @@ html {
 
 body {
   background: var(--body-bg);
-  max-width: 200rem;
+  max-width: 150rem;
   margin-inline: auto;
 }
 
