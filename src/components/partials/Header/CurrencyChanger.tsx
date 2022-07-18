@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { useCoinContext } from "../../../context/coinContext/coinContext"
 
 const CurrencyChanger = () => {
-    const {currency, setCoin} = useCoinContext()
+   const {currency, setCoin} = useCoinContext()
 
    return(
       <SelectStyled
