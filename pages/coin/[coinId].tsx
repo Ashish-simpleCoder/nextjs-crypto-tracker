@@ -3,10 +3,10 @@ import { useRouter } from "next/router"
 import { useCallback, useEffect } from "react"
 import { SingleCoin } from "../../src/api/api"
 import { useCoinContext } from "../../src/context/coinContext/coinContext"
-import CoinSideBar from "../../src/pageComponents/CoinDetails/CoinSideBar"
+import CoinSideBar from "../../src/pageComponents/coinDetails/CoinSideBar"
 import asyncWrapper from "../../src/utility/asyncWrapper"
 
-const CoinGraph = dynamic(() => import("../../src/pageComponents/CoinDetails/CoinGraph"), {ssr: false})
+const CoinGraph = dynamic(() => import("../../src/pageComponents/coinDetails/CoinGraph"), {ssr: false})
 
 
 const CoinDetails = () => {
