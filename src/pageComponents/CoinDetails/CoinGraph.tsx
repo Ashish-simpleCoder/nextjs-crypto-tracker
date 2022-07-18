@@ -6,7 +6,7 @@ import H2 from "../../components/Typography/H2";
 import { useCoinContext } from "../../context/coinContext/coinContext";
 import useInterSectionObserver from "../../hooks/useInterSectionObserver";
 import asyncWrapper from "../../utility/asyncWrapper";
-import HistoryRangeChanger from "./HistoryRangeChanger";
+import HistoryRangeChanger from "./HistoryRangeChanger"
 
 
 const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>{
