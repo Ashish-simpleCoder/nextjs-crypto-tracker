@@ -2,7 +2,7 @@ import { CSSProperties, memo, ReactNode } from "react";
 import styled from "styled-components";
 
 
-const Para = memo(({text,mTop}: {text: string, mTop?: string})=>{
+const Para = ({text,mTop}: {text: string, mTop?: string})=>{
     const styles:CSSProperties = {}
     mTop && (styles.marginTop = mTop)
     const textSecure = String(text)
@@ -10,7 +10,7 @@ const Para = memo(({text,mTop}: {text: string, mTop?: string})=>{
     return(
         <StyledPara style={styles} dangerouslySetInnerHTML={{__html:textSecure}} ></StyledPara>
     )
-})
+}
 export default Para
 
 const StyledPara = styled.p`
