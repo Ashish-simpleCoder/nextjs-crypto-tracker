@@ -30,4 +30,5 @@ const SelectStyled = styled.select`
    cursor:pointer;
    background:inherit;
    margin-inline-end:2rem;
+   margin-inline-start: auto;
 `

@@ -24,7 +24,6 @@ export default LogoContainer
 const StyledLogoContainer = styled.section`
     display: flex;
     align-items: center;
-    /* flex: 1; */
     cursor: pointer;
     span {
         margin-inline-end: 1rem;
