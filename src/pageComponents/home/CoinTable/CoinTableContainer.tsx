@@ -26,7 +26,7 @@ const CoinTableContainer = memo(({heading, visible}: {heading: string, visible: 
     },[setTableCoins,currency,visible])
 
     return(
-        <section style={{padding:'3rem clamp(1rem,3rem,3vw)',textAlign:'center',height:'100%'}} >
+        <section style={{padding:'3rem clamp(1rem,3rem,3vw)',textAlign:'center',height:'100%',overflowX: 'hidden'}} >
             <H2 center mTop="1rem" mBottom='2rem'>{heading}</H2>
 
             <section style={{width:'100%',overflowX:'auto'}} ref={TableRef} className={`${isTableInterSecting ? 'animate': 'hide'}`}>
