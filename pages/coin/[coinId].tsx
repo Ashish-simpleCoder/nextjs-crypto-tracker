@@ -3,13 +3,13 @@ import { useRouter } from "next/router"
 import { Suspense, useCallback, useEffect } from "react"
 import { SingleCoin } from "../../src/api/api"
 import { useCoinContext } from "../../src/context/coinContext/coinContext"
-import CoinGraph from "../../src/pageComponents/CoinDetails/CoinGraph"
-import CoinSideBar from "../../src/pageComponents/CoinDetails/CoinSideBar"
+// import CoinGraph from "../../src/pageComponents/CoinDetails/CoinGraph"
+// import CoinSideBar from "../../src/pageComponents/CoinDetails/CoinSideBar"
 import asyncWrapper from "../../src/utility/asyncWrapper"
 import If from "../../src/utilityComponents/If"
 
-// const CoinGraph = dynamic(() => import("../../src/pageComponents/CoinDetails/CoinGraph" /* webpackChunkName: 'CoinGraph'*/), {ssr: false})
-// const CoinSideBar = dynamic(() => import("../../src/pageComponents/CoinDetails/CoinSideBar" /* webpackChunkName: 'CoinSideBar'*/), {suspense: true})
+const CoinGraph = dynamic(() => import("../../src/pageComponents/CoinDetails/CoinGraph" /* webpackChunkName: 'CoinGraph'*/), {ssr: false})
+const CoinSideBar = dynamic(() => import("../../src/pageComponents/CoinDetails/CoinSideBar" /* webpackChunkName: 'CoinSideBar'*/), {suspense: true})
 
 
 const CoinDetails = () => {
@@ -38,12 +38,12 @@ const CoinDetails = () => {
         <main>
             <If condition={coin_details.id}>
                 <>
-                    {/* <Suspense fallback={<></>}> */}
+                    <Suspense fallback={<></>}>
                         <CoinSideBar image={coin_details?.image?.large} name={coin_details?.name} description={coin_details?.description?.en?.split(". ")[0]}/>
-                    {/* </Suspense> */}
-                    {/* <Suspense fallback={<></>}> */}
+                    </Suspense>
+                    <Suspense fallback={<></>}>
                         <CoinGraph id={coinId} visible/>
-                    {/* </Suspense> */}
+                    </Suspense>
                 </>
             </If>
         </main>
