@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useState } from "react"
+import { memo, useCallback, useEffect, useMemo } from "react"
 import AliceCarousel from "react-alice-carousel"
 import { TrendingCoins } from "../../../api/api"
 import 'react-alice-carousel/lib/alice-carousel.css'
@@ -14,6 +14,19 @@ const Carousal = memo(()=>{
       let res = await fetch(TrendingCoins(selected_currency))
       return await res.json()
    }), [])
+
+   const responsive = useMemo(() => ({
+      0:{items:2},
+      700:{items:4},
+      1200:{items:6}
+   }), [])
+
+   const itemsObj = useCallback((trending_coins: any,select_symbol: any) => {
+      return trending_coins?.map((coin: any)=>{
+         return <CarousalItem coin={coin} select_symbol={select_symbol}/>
+      })
+   }, [])
+
 
    useEffect(()=>{
       fetchTrendingCoins(currency).then(res => {
@@ -37,20 +50,9 @@ const Carousal = memo(()=>{
             responsive={responsive}
             disableDotsControls
             disableButtonsControls
-            // autoPlay = {true}
+            autoPlay = {true}
          />
       </div>
    )
 })
 export default Carousal
-
-const responsive ={
-   0:{items:2},
-   700:{items:4},
-   1200:{items:6}
-}
-
-
-const itemsObj = (trending_coins: any,select_symbol: any) => trending_coins?.map((coin: any)=><CarousalItem coin={coin} select_symbol={select_symbol}/>)
-
-
