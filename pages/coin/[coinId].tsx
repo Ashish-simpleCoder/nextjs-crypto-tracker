@@ -1,12 +1,13 @@
 import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
-import { useCallback, useEffect } from "react"
+import { Suspense, useCallback, useEffect } from "react"
 import { SingleCoin } from "../../src/api/api"
 import { useCoinContext } from "../../src/context/coinContext/coinContext"
-import CoinSideBar from "../../src/pageComponents/coinDetails/CoinSideBar"
 import asyncWrapper from "../../src/utility/asyncWrapper"
+import If from "../../src/utilityComponents/If"
 
 const CoinGraph = dynamic(() => import("../../src/pageComponents/coinDetails/CoinGraph"), {ssr: false})
+const CoinSideBar = dynamic(() => import("../../src/pageComponents/coinDetails/CoinSideBar"), {suspense: true})
 
 
 const CoinDetails = () => {
@@ -33,11 +34,14 @@ const CoinDetails = () => {
 
     return(
         <main>
-            {
-                coin_details && <CoinSideBar image={coin_details?.image?.large} name={coin_details?.name} description={coin_details?.description?.en?.split(". ")[0]}/>
-            }
-            { coin_details &&  <CoinGraph id={coinId} visible/> }
-
+            <If condition={coin_details.id}>
+                <>
+                    <CoinSideBar image={coin_details?.image?.large} name={coin_details?.name} description={coin_details?.description?.en?.split(". ")[0]}/>
+                    <Suspense fallback={<></>}>
+                        <CoinGraph id={coinId} visible/>
+                    </Suspense>
+                </>
+            </If>
         </main>
     )
 }

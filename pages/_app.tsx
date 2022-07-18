@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app'
-import Footer from '../src/components/partials/Footer/Footer'
 import Header from '../src/components/partials/Header/Header'
 import { CryptoContextProvider } from '../src/context/coinContext/coinContext'
 import { ThemeContextProvider } from '../src/context/theme/themeContext'
@@ -11,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             <CryptoContextProvider>
                 <Header />
                 <Component {...pageProps} />
-                <Footer />
             </CryptoContextProvider>
         </ThemeContextProvider>
     )
