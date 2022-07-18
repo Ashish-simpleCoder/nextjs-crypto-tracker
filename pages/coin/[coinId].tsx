@@ -6,8 +6,8 @@ import { useCoinContext } from "../../src/context/coinContext/coinContext"
 import asyncWrapper from "../../src/utility/asyncWrapper"
 import If from "../../src/utilityComponents/If"
 
-const CoinGraph = dynamic(() => import("../../src/pageComponents/coinDetails/CoinGraph"), {ssr: false})
-const CoinSideBar = dynamic(() => import("../../src/pageComponents/coinDetails/CoinSideBar"), {suspense: true})
+const CoinGraph = dynamic(() => import("../../src/pageComponents/coinDetails/CoinGraph" /* webpackChunkName: 'CoinGraph'*/), {ssr: false})
+const CoinSideBar = dynamic(() => import("../../src/pageComponents/coinDetails/CoinSideBar" /* webpackChunkName: 'CoinSideBar'*/), {suspense: true})
 
 
 const CoinDetails = () => {
@@ -36,7 +36,9 @@ const CoinDetails = () => {
         <main>
             <If condition={coin_details.id}>
                 <>
-                    <CoinSideBar image={coin_details?.image?.large} name={coin_details?.name} description={coin_details?.description?.en?.split(". ")[0]}/>
+                    <Suspense fallback={<></>}>
+                        <CoinSideBar image={coin_details?.image?.large} name={coin_details?.name} description={coin_details?.description?.en?.split(". ")[0]}/>
+                    </Suspense>
                     <Suspense fallback={<></>}>
                         <CoinGraph id={coinId} visible/>
                     </Suspense>
