@@ -52,8 +52,8 @@ const HeroTitle = styled.div`
    align-items:center;
    justify-content:center;
    h2{
-      font-size:clamp(4rem,5rem,5vw);
-      font-weight:500;
+      font-size:clamp(5rem,6rem,6vw);
+      /* font-weight:500; */
       color:var(--hero-title-clr);
    }
    p{
