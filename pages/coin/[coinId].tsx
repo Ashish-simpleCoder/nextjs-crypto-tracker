@@ -8,7 +8,6 @@ import If from "../../src/utilityComponents/If"
 
 // @ts-ignore
 const CoinGraph = dynamic(() => import("../../src/pageComponents/coinDetails/CoinGraph" /* webpackChunkName: 'CoinGraph'*/), {ssr: false})
-// @ts-ignore
 const CoinSideBar = dynamic(() => import("../../src/pageComponents/coinDetails/CoinSideBar" /* webpackChunkName: 'CoinSideBar'*/), {suspense: true})
 
 
