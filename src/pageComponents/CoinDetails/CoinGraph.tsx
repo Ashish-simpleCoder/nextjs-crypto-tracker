@@ -5,6 +5,7 @@ import Graph from "../../components/shared/Graph";
 import H2 from "../../components/Typography/H2";
 import { useCoinContext } from "../../context/coinContext/coinContext";
 import asyncWrapper from "../../utility/asyncWrapper";
+import HistoryRangeChanger from "./HistoryRangeChanger";
 
 
 const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>{
@@ -16,7 +17,6 @@ const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>
     }), [])
 
     useEffect(()=>{
-        // visible && fetchCoinHistory([id, history.days, currency]).then(({prices})=>setCoin(v=>({...v,history:{...v.history,data:prices}})))
         if(!id || !currency || !history.days) return
         fetchCoinHistory([id, history.days, currency]).then(res => {
             if (res.error) {
@@ -33,6 +33,7 @@ const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>
         <StyledGraphContainer id='coin_graph'>
             <H2 center mBottom="2rem">{`Coin history upto ${history.days} days`}</H2>
             <Graph data={history.data} days={history.days} currency={currency}/>
+            <HistoryRangeChanger />
         </StyledGraphContainer>
     )
 }
