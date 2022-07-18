@@ -55,6 +55,7 @@ const HeroTitle = styled.div`
       font-size:clamp(5rem,6rem,6vw);
       /* font-weight:500; */
       color:var(--hero-title-clr);
+      letter-spacing: 0.2rem;
    }
    p{
       font-size:clamp(1.6rem,1.8rem,1.8vw);

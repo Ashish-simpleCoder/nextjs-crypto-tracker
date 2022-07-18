@@ -32,7 +32,7 @@ const StyledLogoContainer = styled.section`
     h1 {
         color: var(--prm-clr);
         font-size: clamp(1.8rem, 2rem, 2vw);
-        font-weight: 400;
+        /* font-weight: 400; */
     }
 
     button{
