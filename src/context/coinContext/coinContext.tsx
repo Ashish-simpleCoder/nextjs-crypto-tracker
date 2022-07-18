@@ -8,7 +8,7 @@ export const CryptoContextProvider = memo(({ children }: { children: ReactNode }
         symbol: '₹',
         details: {},
         history: {
-            days: 1,
+            days: 15,
             data: []
         }
     })

@@ -13,6 +13,7 @@
   --header-bg:white;
   --table-bg:hsl(0, 0%, 100%);
   --table-head-bg: rgb(231, 231, 231);
+  --active-bg: rgb(2, 172, 115);
 }
 
 .dark-theme {
@@ -30,6 +31,7 @@
   --header-bg:hsl(0, 0%, 12%);
   --table-bg:hsl(0, 0%, 8%);
   --table-head-bg: black;
+  --active-bg: rgb(2, 172, 115);
 }
 
 .dark-theme .theme_img {
