@@ -22,7 +22,8 @@ const StyledHero = styled.section`
    flex-direction:column;
    justify-content:space-between;
    align-items:center;
-   height:80%;
+   /* height:80%; */
+   height: 50rem;
    width:100%;
    overflow:hidden;
    position:relative;
@@ -36,8 +37,9 @@ const StyledHero = styled.section`
       filter:brightness(0.25);
    }
    @media (min-width:700px){
-      max-height:60rem;
-      height:100%;
+      /* max-height:60rem; */
+      /* height:100%; */
+      height: 60rem;
       >img{
          height:100%;
          max-height:60rem
@@ -52,10 +54,13 @@ const HeroTitle = styled.div`
    align-items:center;
    justify-content:center;
    h2{
-      font-size:clamp(5rem,6rem,6vw);
+      font-size:clamp(4rem,6rem,6vw);
       /* font-weight:500; */
       color:var(--hero-title-clr);
       letter-spacing: 0.2rem;
+   }
+   h2, p{
+      text-align:center;
    }
    p{
       font-size:clamp(1.6rem,1.8rem,1.8vw);
