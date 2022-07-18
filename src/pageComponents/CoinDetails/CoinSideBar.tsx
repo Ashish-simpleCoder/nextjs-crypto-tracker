@@ -20,7 +20,7 @@ const StyledSideBar = styled.section`
     padding:3rem clamp(1rem,3rem,3vw);
     display:flex;
     flex-direction:column;
-    /* justify-content:center; */
+    justify-content:center;
     align-items:center;
     width:100%;
     height:50rem;
@@ -30,5 +30,6 @@ const StyledSideBar = styled.section`
         width:30rem;
         height:100%;
         border-right:1px solid;
+        justify-content:unset;
     }
 `

@@ -1,15 +1,19 @@
-import { memo, useCallback, useEffect, useLayoutEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { HistoricalChart } from "../../api/api";
 import Graph from "../../components/shared/Graph";
 import H2 from "../../components/Typography/H2";
 import { useCoinContext } from "../../context/coinContext/coinContext";
+import useInterSectionObserver from "../../hooks/useInterSectionObserver";
 import asyncWrapper from "../../utility/asyncWrapper";
 import HistoryRangeChanger from "./HistoryRangeChanger";
 
 
 const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>{
     const {history, currency, setCoin} = useCoinContext()
+
+    const GraphRef = useRef(null)
+    const isTableInterSecting = useInterSectionObserver({element: GraphRef.current})
 
     const fetchCoinHistory = useCallback(asyncWrapper(async (id: string, days: number, currency: string) => {
         let res = await fetch(HistoricalChart(id, days, currency))
@@ -18,7 +22,7 @@ const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>
 
     useEffect(()=>{
         if(!id || !currency || !history.days) return
-        fetchCoinHistory([id, history.days, currency]).then(res => {
+        isTableInterSecting && fetchCoinHistory([id, history.days, currency]).then(res => {
             if (res.error) {
                console.log(res.error)
             } else {
@@ -27,10 +31,10 @@ const CoinGraph = ({id, visible}: {id?: string | string[], visible?: boolean})=>
             }
          })
 
-    },[currency,id,setCoin,visible,history.days])
+    },[currency,id,setCoin,visible,history.days, isTableInterSecting])
 
     return(
-        <StyledGraphContainer id='coin_graph'>
+        <StyledGraphContainer ref={GraphRef}>
             <H2 center mBottom="2rem">{`Coin history upto ${history.days} days`}</H2>
             <Graph data={history.data} days={history.days} currency={currency}/>
             <HistoryRangeChanger />

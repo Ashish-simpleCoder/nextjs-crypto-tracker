@@ -63,6 +63,7 @@ body {
   background: var(--body-bg);
   max-width: 150rem;
   margin-inline: auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -102,5 +103,36 @@ h2 {
 
 .MuiPagination-ul li button {
   font-size: clamp(1.4rem, 1.5rem, 1.5vw) !important;
+}
+
+.hide {
+  opacity: 0;
+  -webkit-transform: translateX(5rem);
+          transform: translateX(5rem);
+}
+
+.animate {
+  -webkit-animation: animate_on_scroll 0.3s ease forwards;
+          animation: animate_on_scroll 0.3s ease forwards;
+}
+
+@-webkit-keyframes animate_on_scroll {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  to {
+  }
+}
+
+@keyframes animate_on_scroll {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  to {
+  }
 }
 /*# sourceMappingURL=index.css.map */
