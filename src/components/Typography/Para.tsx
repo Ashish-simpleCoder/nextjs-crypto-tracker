@@ -1,4 +1,4 @@
-import { CSSProperties, memo, ReactNode } from "react";
+import { CSSProperties } from "react";
 import styled from "styled-components";
 
 
