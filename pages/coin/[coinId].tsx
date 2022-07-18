@@ -1,9 +1,12 @@
+import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { useCallback, useEffect } from "react"
 import { SingleCoin } from "../../src/api/api"
 import { useCoinContext } from "../../src/context/coinContext/coinContext"
 import CoinSideBar from "../../src/pageComponents/CoinDetails/CoinSideBar"
 import asyncWrapper from "../../src/utility/asyncWrapper"
+
+const CoinGraph = dynamic(() => import("../../src/pageComponents/CoinDetails/CoinGraph"), {ssr: false})
 
 
 const CoinDetails = () => {
@@ -33,6 +36,7 @@ const CoinDetails = () => {
             {
                 coin_details && <CoinSideBar image={coin_details?.image?.large} name={coin_details?.name} description={coin_details?.description?.en?.split(". ")[0]}/>
             }
+            { coin_details &&  <CoinGraph id={coinId} visible/> }
 
         </main>
     )
