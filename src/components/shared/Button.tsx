@@ -34,7 +34,7 @@ const StyledButton = styled.button<{mode?: string}>`
     ${(props) => {
         if(props.mode === 'r'){
             return css`
-                padding: 1rem 2rem;
+                padding: clamp(0.5rem, 1rem, 1vw) clamp(1rem, 2rem, 2vw);
                 background-color: var(--secondary-clr);
                 color: var(--clr);
             `
