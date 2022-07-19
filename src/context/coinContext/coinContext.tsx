@@ -1,6 +1,7 @@
 import { createContext, memo, ReactNode, useContext, useEffect, useState } from 'react'
+import { ICoinContenxt } from './coinContextInterface'
 
-const CoinContext = createContext({} as any)
+const CoinContext = createContext<ICoinContenxt>({} as ICoinContenxt)
 
 export const CryptoContextProvider = memo(({ children }: { children: ReactNode }) => {
     const [coin, setCoin] = useState({
@@ -14,11 +15,7 @@ export const CryptoContextProvider = memo(({ children }: { children: ReactNode }
     })
     const [trending_coins, setTrendingCoins] = useState([])
     const [TABLE_COINS, setTableCoins] = useState([])
-    const [page, setPage] = useState({
-        start: 0,
-        end: 9,
-        active_page: 1
-    })
+
 
     useEffect(() => setCoin(v => ({ ...v, symbol: v.currency === 'INR' ? '₹' : '$' })), [coin.currency, setCoin])
 
@@ -29,8 +26,6 @@ export const CryptoContextProvider = memo(({ children }: { children: ReactNode }
                 setCoin,
                 TABLE_COINS,
                 setTableCoins,
-                ...page,
-                setPage,
                 trending_coins,
                 setTrendingCoins
             }}

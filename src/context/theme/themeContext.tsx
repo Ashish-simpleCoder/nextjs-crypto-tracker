@@ -1,9 +1,7 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { IThemeContenxt } from "./themeContextInterface";
 
-interface IThemeContenxt {
-    darkTheme: boolean
-    toggleDarkTheme: () => void
-}
+
 const ThemeContext = createContext<IThemeContenxt>({} as IThemeContenxt)
 
 const theme: boolean = JSON.parse(global?.localStorage?.getItem('dark-theme')! || 'false')
