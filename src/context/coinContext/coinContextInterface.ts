@@ -4,7 +4,16 @@ export interface ICoinContenxt {
     setCoin: Dispatch<SetStateAction<{
         currency: string;
         symbol: string;
-        details: {};
+        details: {
+            id: string,
+            image: {
+                large: string
+            },
+            name: string,
+            description: {
+                en: string
+            }
+        }
         history: {
             days: number;
             data: never[];
@@ -16,7 +25,16 @@ export interface ICoinContenxt {
     setTrendingCoins: Dispatch<SetStateAction<never[]>>
     currency: string
     symbol: string
-    details: {}
+    details: {
+        id: string,
+        image: {
+            large: string
+        },
+        name: string,
+        description: {
+            en: string
+        }
+    }
     history: {
         days: number
         data: never[]

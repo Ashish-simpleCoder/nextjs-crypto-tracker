@@ -7,7 +7,16 @@ export const CryptoContextProvider = memo(({ children }: { children: ReactNode }
     const [coin, setCoin] = useState({
         currency: 'INR',
         symbol: '₹',
-        details: {},
+        details: {
+            id: '',
+        image: {
+            large: ''
+        },
+        name: '',
+        description: {
+            en: ''
+        }
+        },
         history: {
             days: 15,
             data: []

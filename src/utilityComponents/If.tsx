@@ -1,4 +1,4 @@
-const If = ({children, condition}: {children: any, condition: boolean}) => {
+const If = ({children, condition}: {children: any, condition: any}) => {
     if(typeof children === 'object'){
         return <>{children}</>
     }
