@@ -1,0 +1,138 @@
+:root {
+  --prm-clr:hsl(210, 50%, 8%);
+  --secondary-clr:hsl(140, 100%, 30%);
+  --accent-clr:hsl(0, 0%, 80%);
+  --border:hsl(0,0%,95%);
+  --hero-title-clr:var(--secondary-clr);
+  --hero-caption-clr:hsl(0, 0%, 80%);
+  --profit-clr:hsl(120, 100%, 40%);
+  --lose-clr:hsl(0, 80%, 60%);
+  --price-clr:var(--accent-clr);
+  --coin-name-clr:white;
+  --body-bg:hsl(0, 0%, 95%);
+  --header-bg:white;
+  --table-bg:hsl(0, 0%, 100%);
+  --table-head-bg: rgb(231, 231, 231);
+  --active-bg: rgb(2, 172, 115);
+}
+
+.dark-theme {
+  --prm-clr:hsl(210, 50%, 95%);
+  --secondary-clr:hsl(140, 100%,35%);
+  --accent-clr:hsl(0, 0%, 80%);
+  --border:hsl(0,0%,10%);
+  --hero-title-clr:var(--secondary-clr);
+  --hero-caption-clr:hsl(0, 0%, 80%);
+  --profit-clr:hsl(120, 100%, 60%);
+  --lose-clr:hsl(0, 80%, 60%);
+  --price-clr:var(--accent-clr);
+  --coin-name-clr:white;
+  --body-bg:hsl(0, 0%, 5%);
+  --header-bg:hsl(0, 0%, 12%);
+  --table-bg:hsl(0, 0%, 10%);
+  --table-head-bg: black;
+  --active-bg: rgb(2, 172, 115);
+}
+
+.dark-theme .theme_img {
+  -webkit-filter: invert(0.9);
+          filter: invert(0.9);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  color: var(--prm-clr);
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+html, body, main, #__next {
+  min-height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--body-bg);
+  max-width: 150rem;
+  margin-inline: auto;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  font-size: clamp(1.6rem, 1.7rem, 1.7vw);
+  padding: 1rem;
+  color: var(--accent-clr);
+  cursor: pointer;
+  -webkit-transition: background 0.3s,border-radius 0.3s;
+  transition: background 0.3s,border-radius 0.3s;
+}
+
+h2 {
+  color: var(--prm-clr);
+  font-weight: 400;
+}
+
+.profit {
+  color: var(--profit-clr);
+}
+
+.lose {
+  color: var(--lose-clr);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MuiPagination-ul li button {
+  font-size: clamp(1.4rem, 1.5rem, 1.5vw) !important;
+}
+
+.hide {
+  opacity: 0;
+  -webkit-transform: translateX(5rem);
+          transform: translateX(5rem);
+}
+
+.animate {
+  -webkit-animation: animate_on_scroll 0.3s ease forwards;
+          animation: animate_on_scroll 0.3s ease forwards;
+}
+
+@-webkit-keyframes animate_on_scroll {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  to {
+  }
+}
+
+@keyframes animate_on_scroll {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  to {
+  }
+}
+/*# sourceMappingURL=index.css.map */
