@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 const ToggleTheme = () => {
     const { darkTheme, toggleDarkTheme } = useThemeContext()
+
     return (
         <div>
             <Button handleClick={toggleDarkTheme}>

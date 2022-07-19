@@ -5,14 +5,14 @@ const CurrencyChanger = () => {
    const {currency, setCoin} = useCoinContext()
 
    return(
-      <SelectStyled
+      <StyledSelectOption
          title='change currency'
          value={currency}
          onChange={(e)=>setCoin((v: any)=>({...v,currency:e.target.value}))}
       >
          <Option value='INR'/>
          <Option value='USD'/>
-      </SelectStyled>
+      </StyledSelectOption>
    )
 }
 export default CurrencyChanger
@@ -20,7 +20,7 @@ export default CurrencyChanger
 const Option = ({value}:{ value: string})=> <option value={value}>{value}</option>
 
 
-const SelectStyled = styled.select`
+const StyledSelectOption = styled.select`
    color:var(--secondary-clr);
    width:10rem;
    height:3rem;

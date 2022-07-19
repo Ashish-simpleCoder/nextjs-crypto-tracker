@@ -14,6 +14,7 @@ const Pagination = ({
     active_page_index: number
     jumpToPage: (i: number) => void
 }) => {
+
     return (
         <StyledPagination style={{ marginBottom: '3rem', marginTop: '2rem' }}>
             <Button handleClick={prevPage} disabled={active_page_index === 0} title={`go to previous page`}>

@@ -1,6 +1,8 @@
-import { memo, useCallback } from "react"
+import { useCallback } from "react"
 import { Line } from "react-chartjs-2"
 import {registerables, Chart} from 'chart.js'
+
+
 Chart.register(...registerables)
 
 
